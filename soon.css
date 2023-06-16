@@ -5,6 +5,14 @@ header{
     
 }
 
+header h1 span:first-child{
+    color: orange;
+}
+
+header h1 span:nth-child(2){
+    
+}
+
 .soon{
     margin-top: 100px;
     text-align: center;
@@ -42,6 +50,7 @@ html{
     font-size: 30px;
     justify-content: center;
     align-items: center;
+    color: orangered;
 }
 
 .counter p {
