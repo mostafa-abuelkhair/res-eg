@@ -57,3 +57,42 @@ html{
     margin-top: 20px;
     color: grey;
 }
+
+@media screen and (max-width: 800px) {
+
+    .soon{
+        font-size: 50px;
+    }
+
+    header{
+        margin-top: 80px;
+        font-size: 20px;
+        
+    }
+
+    .counter span {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .counter p {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+  }
+
+  @media screen and (max-width: 400px) {
+
+    .soon{
+        font-size: 35px;
+    }
+
+    header{
+        margin-top: 80px;
+        font-size: 15px;
+        
+    }
+
+  }
