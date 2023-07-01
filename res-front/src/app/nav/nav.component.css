@@ -33,6 +33,9 @@
     font-size: 1.4rem;
     cursor: pointer;
 }
+.upperNav div:last-child i:hover{
+    color: var(--yellow);
+}
 
 
 

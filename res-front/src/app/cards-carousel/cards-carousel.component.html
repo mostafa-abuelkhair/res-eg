@@ -1,0 +1,8 @@
+<section>
+
+    <div *ngFor = "let card of cards; index as i" class="card" [style] = "cardStyle(i)" (click)="cardChosen = i">
+        <img [src]="card.src" alt="">
+        <p>{{ card.p }}</p>
+    </div>
+
+</section>
