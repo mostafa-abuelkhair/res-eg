@@ -1,0 +1,51 @@
+:host{
+    display: block;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+p{
+    text-align: center;
+    position: absolute;
+    margin:0px ;
+    top: 10%;
+    left: 50%;
+    font-size:10vw;
+    word-spacing: 3rem;
+    line-height: 15vw;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+p span:first-child, p span:nth-child(3), p span:last-child{
+    animation-name: reveal;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+
+p span:first-child{
+    color: var(--red);
+}
+
+p span:nth-child(3){
+    color: var(--green);
+    animation-delay: 0.5s;
+}
+
+p span:last-child{
+    color: var(--green);
+    animation-delay: 1s;
+}
+
+@keyframes reveal {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+  }

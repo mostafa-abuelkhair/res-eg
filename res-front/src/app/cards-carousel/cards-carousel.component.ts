@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-cards-carousel',
@@ -29,6 +29,7 @@ export class CardsCarouselComponent{
 
 
   ngOnInit() {
+    AOS.init();
     setTimeout(this.changeCard.bind(this), 500);
     this.tim = this.setTimer();
   }
