@@ -1,6 +1,43 @@
-section{
+:host{
+    display:block;
+    background: radial-gradient( rgba(0, 90, 128, 0.256) 0%, white 70%);
+    font-size: 15px;
+    font-family: sans-serif;
+}
 
-    height:500px;
+
+header{
+    overflow:auto;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 35px;
+    padding-left: 100px;
+    padding-right: 100px;
+    overflow: hidden;
+}
+
+header h1{
+    letter-spacing: 6px;
+    animation-name: reveal;
+    animation-duration: 1s;
+}
+
+header p{
+    animation-name: reveal;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+@keyframes reveal {
+    from {opacity: 0%;position: relative;top: 30px;}
+    to {opacity: 100%;position: relative;top: 0px;}
+  }
+
+
+section{
+    height:40vw;   
     position: relative;
     overflow: hidden;
 }
@@ -10,15 +47,53 @@ section{
     height: 100%;
     cursor: pointer;
     box-sizing: border-box;
-    border: solid;
     display: inline-block;
+    background-color: var(--green);
     position: absolute;
-    background-color: var(--yellow);
     transition: all 1s;
+    border: solid;
+    border-color: var(--green);
+    filter:brightness(80%);
 }
-
 
 .card img{
     width: 100%;
     height: 50%;
+    object-fit: cover;
+
 }
+.card a{
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4em;
+    line-height: 2em;
+    padding: 15px;
+}
+.card a:hover{
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 1300px) {
+    :host{
+     font-size: 12px;
+   }
+ }
+
+@media screen and (max-width: 900px) {
+     :host{
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    :host{
+        font-size: 7px;
+      }
+  }

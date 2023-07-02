@@ -1,8 +1,18 @@
+
+
+<header>
+    <h1>Stay <span style="color: var(--green);">ON</span> and Safe</h1>
+    <p>Discover our range of products in Uninterruptible Power Supplys (UPS) that deliver high availability and reliability and
+        protect your enterprise-wide networks, data centers, mission-critical systems, and industrial manufacturing processes</p>
+</header>
+
+
 <section>
 
-    <div *ngFor = "let card of cards; index as i" class="card" [style] = "cardStyle(i)" (click)="cardChosen = i">
+    <div *ngFor = "let card of cards; index as i" class="card" [style] = "cardStyle(i)" (click)="cardChoose(i)">
         <img [src]="card.src" alt="">
-        <p>{{ card.p }}</p>
+        <a href="">{{ card.p }}</a>
     </div>
 
 </section>
+

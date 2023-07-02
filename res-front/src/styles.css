@@ -5,3 +5,15 @@
     --yellow: #F6FA70;
     --red: #FF0060;
 }
+
+@media screen and (max-width: 800px) {
+    :root{
+        font-size: 12px;
+      }
+  }
+
+  @media screen and (max-width: 600px) {
+    :root{
+        font-size: 10px;
+      }
+  }

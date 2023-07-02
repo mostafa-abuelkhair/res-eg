@@ -41,9 +41,14 @@
 
 
 .lowerNav{
-    height: 120px;
+    position: -webkit-sticky; /* Safari */
+    position:sticky;
+    top: 0;
+    background-color: white;
+    height: 80px;
     display: flex;
     align-items: center;
+    z-index: 100;
 }
 
 .lowerNav ul{
@@ -69,6 +74,10 @@
     color: black; 
 }
 
+.lowerNav a.active{
+    color: var(--red);
+}
+
 .lowerNav a:hover{
-    color: var(--blue);
+    color: var(--red);
 }
