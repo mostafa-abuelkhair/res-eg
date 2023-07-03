@@ -1,13 +1,17 @@
 
 
-<header>
-    <h1>Stay <span style="color: var(--green);">ON</span> and Safe</h1>
-    <p>Discover our range of products in Uninterruptible Power Supplys (UPS) that deliver high availability and reliability and
-        protect your enterprise-wide networks, data centers, mission-critical systems, and industrial manufacturing processes</p>
+<header >
+    <h1 data-aos="fade-up" >
+        Stay <span style="color: var(--green);">ON</span> and Safe
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="500">
+        Discover our range of products in Uninterruptible Power Supplys (UPS) that deliver high availability and reliability and
+        protect your enterprise-wide networks, data centers, mission-critical systems, and industrial manufacturing processes
+    </p>
 </header>
 
 
-<section>
+<section data-aos="zoom-in" data-aos-delay="600" data-aos-id="carousel">
 
     <div *ngFor = "let card of cards; index as i" class="card" [style] = "cardStyle(i)" (click)="cardChoose(i)">
         <img [src]="card.src" alt="">

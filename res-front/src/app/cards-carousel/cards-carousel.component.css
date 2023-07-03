@@ -12,28 +12,28 @@ header{
     text-align: center;
     font-size: 1.5em;
     line-height: 35px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 10vw;
+    padding-right: 10vw;
     overflow: hidden;
 }
 
 header h1{
     letter-spacing: 6px;
-    animation-name: reveal;
-    animation-duration: 1s;
+   /* animation-name: reveal;
+    animation-duration: 1s;*/
 }
 
 header p{
-    animation-name: reveal;
+    /*animation-name: reveal;
     animation-duration: 2s;
     animation-delay: 0.3s;
-    animation-fill-mode: both;
+    animation-fill-mode: both;*/
 }
 
-@keyframes reveal {
+/*@keyframes reveal {
     from {opacity: 0%;position: relative;top: 30px;}
     to {opacity: 100%;position: relative;top: 0px;}
-  }
+  }*/
 
 
 section{

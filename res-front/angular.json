@@ -26,6 +26,8 @@
             ],
             "styles": [
               "./node_modules/aos/dist/aos.css",
+              "./src/assets/fontawesome-free-6.4.0-web/css/fontawesome.css",
+              "./src/assets/fontawesome-free-6.4.0-web/css/all.css",
               "src/styles.css"
             ],
             "scripts": []

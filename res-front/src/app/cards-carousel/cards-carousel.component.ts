@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as AOS from 'aos';
 
+
 @Component({
   selector: 'app-cards-carousel',
   templateUrl: './cards-carousel.component.html',
@@ -26,15 +27,27 @@ export class CardsCarouselComponent{
   cardChosen = this.cards.length;
 
   tim:any;
+  timout:any;
 
 
   ngOnInit() {
-    AOS.init();
-    setTimeout(this.changeCard.bind(this), 500);
-    this.tim = this.setTimer();
+      AOS.init({ duration : 1000});
+
+      document.addEventListener('aos:in:carousel', this.startCards.bind(this));
+
+      this.startCards()
+    
   }
 
-  setTimer(){return setInterval(this.changeCard.bind(this), 5000);}
+  startCards(){
+    clearInterval(this.tim);
+    this.cardChosen=this.cards.length;
+    clearTimeout(this.timout);
+    this.timout = setTimeout(this.changeCard.bind(this), 1000);
+    this.setTimer();
+  }
+
+  setTimer(){ this.tim =  setInterval(this.changeCard.bind(this), 5000);}
 
   changeCard(){
     if (this.cardChosen === 0) this.cardChosen=this.cards.length-1;
@@ -44,7 +57,7 @@ export class CardsCarouselComponent{
   cardChoose(i:number){
     this.cardChosen=i;
     clearInterval(this.tim);
-    this.tim = this.setTimer();
+    this.setTimer();
   }
 
   cardStyle(i:number){

@@ -21,7 +21,7 @@ p{
     font-family: sans-serif;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 10px;
+    letter-spacing: 1vw;
 }
 
 p span:first-child, p span:nth-child(3), p span:last-child{

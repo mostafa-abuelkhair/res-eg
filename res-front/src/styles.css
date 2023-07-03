@@ -6,6 +6,9 @@
     --red: #FF0060;
 }
 
+:root{
+    font-size: 15px;
+}
 @media screen and (max-width: 800px) {
     :root{
         font-size: 12px;
@@ -14,6 +17,13 @@
 
   @media screen and (max-width: 600px) {
     :root{
-        font-size: 10px;
+        font-size: 8px;
       }
   }
+
+  @media screen and (max-width: 500px) {
+    :root{
+        font-size: 6px;
+      }
+  }
+  
