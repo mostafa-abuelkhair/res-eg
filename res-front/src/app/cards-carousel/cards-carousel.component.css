@@ -11,9 +11,9 @@ header{
     margin-top: 20px;
     text-align: center;
     font-size: 1.5em;
-    line-height: 35px;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    line-height: 2.5rem;
+    padding-left: 10%;
+    padding-right: 10%;
     overflow: hidden;
 }
 
@@ -37,6 +37,8 @@ header p{
 
 
 section{
+    margin-left: 1%;
+    margin-right: 1%;
     height:40vw;   
     position: relative;
     overflow: hidden;
