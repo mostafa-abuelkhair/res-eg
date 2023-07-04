@@ -1,8 +1,9 @@
 :host{
     display:block;
     background: radial-gradient( rgba(0, 90, 128, 0.256) 0%, white 70%);
-    font-size: 15px;
+    font-size: 1vw;
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 
@@ -72,30 +73,12 @@ section{
     text-align: center;
     text-decoration: none;
     color: white;
-    font-size: 1.4em;
+    font-size: 1.7em;
     line-height: 2em;
-    padding: 15px;
+    padding: 1em;
+    
 }
 .card a:hover{
     text-decoration: underline;
 }
 
-
-
-@media screen and (max-width: 1300px) {
-    :host{
-     font-size: 12px;
-   }
- }
-
-@media screen and (max-width: 900px) {
-     :host{
-      font-size: 10px;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    :host{
-        font-size: 7px;
-      }
-  }

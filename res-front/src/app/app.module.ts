@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { CardsCarouselComponent } from './cards-carousel/cards-carousel.component';
 import { PowerComponent } from './power/power.component';
+import { ServiceComponent } from './service/service.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     CardsCarouselComponent,
-    PowerComponent
+    PowerComponent,
+    ServiceComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
