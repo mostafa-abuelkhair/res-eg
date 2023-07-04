@@ -1,8 +1,9 @@
 .upperNav{
-    
+    z-index: 100;
     background-color: var(--green);
     font-size: 1.2rem;
-    padding: 0.5vw;
+    padding-top:8px;
+    padding-bottom: 8px;
     color:white;
 
 }
@@ -14,13 +15,13 @@
 }
 
 .upperNav div:first-child{
-    width: 75%;
+    width: 70%;
     text-align:start;
-    padding-left: 10px;
+    padding-left: 1vw;
 }
 
 .upperNav div:last-child{
-    width: 25%;
+    width: 30%;
 }
 
 .upperNav div:first-child i{
@@ -30,7 +31,7 @@
 .upperNav div:last-child i{
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 .upperNav div:last-child i:hover{
@@ -41,11 +42,11 @@
 
 
 .lowerNav{
-    position: -webkit-sticky; /* Safari */
     position:sticky;
+    position: -webkit-sticky; /* Safari */
     top: 0;
     background-color: white;
-    height: 5rem;
+    height: 6rem;
     display: flex;
     align-items: center;
     z-index: 100;
@@ -60,16 +61,16 @@
 
 .lowerNav img{
     height:100%;
-    margin-left: 50px;
+    margin-left: 3rem;
     cursor: pointer;
     
 }
 
 .lowerNav a{
     text-decoration: none;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    font-size: 1.4rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
     font-family: sans-serif;
     color: black; 
 }
@@ -80,4 +81,12 @@
 
 .lowerNav a:hover{
     color: var(--red);
+}
+
+@media screen and (min-width: 1000px) {
+    .upperNav{
+    
+        font-size: 1.3rem;
+    
+    }
 }

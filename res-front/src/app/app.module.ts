@@ -8,6 +8,7 @@ import { CardsCarouselComponent } from './cards-carousel/cards-carousel.componen
 import { PowerComponent } from './power/power.component';
 import { ServiceComponent } from './service/service.component';
 import { MessageComponent } from './message/message.component';
+import { FeaturedComponent } from './featured/featured.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MessageComponent } from './message/message.component';
     CardsCarouselComponent,
     PowerComponent,
     ServiceComponent,
-    MessageComponent
+    MessageComponent,
+    FeaturedComponent
   ],
   imports: [
     BrowserModule,

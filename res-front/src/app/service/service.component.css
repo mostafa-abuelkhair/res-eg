@@ -2,7 +2,7 @@
     margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
-
+    overflow: hidden;
 }
 
 .service img{
@@ -46,3 +46,22 @@
 .service-u div h3{
     color: var(--red);
 }
+
+
+@media screen and (max-width: 1000px) {
+    .service{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    .service img{
+        width: 80%;
+    }
+    
+    .service>section{
+        margin-top: 20px;
+        width: 80%;
+    }
+  }
