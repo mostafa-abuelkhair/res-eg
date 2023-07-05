@@ -1,15 +1,15 @@
-:host{
+.power{
     display: block;
     position: relative;
     margin-bottom: 100px;
 }
 
-img{
+.power img{
     width: 100%;
     object-fit: cover;
 }
 
-p{
+.power p{
     text-align: center;
     position: absolute;
     margin:0px ;
@@ -24,23 +24,23 @@ p{
     letter-spacing: 1vw;
 }
 
-p span:first-child, p span:nth-child(3), p span:last-child{
+.power p span:first-child, .power p span:nth-child(3), .power p span:last-child{
     animation-name: reveal;
     animation-duration: 2s;
     animation-fill-mode: both;
 }
 
 
-p span:first-child{
+.power p span:first-child{
     color: var(--red);
 }
 
-p span:nth-child(3){
+.power p span:nth-child(3){
     color: var(--green);
     animation-delay: 0.5s;
 }
 
-p span:last-child{
+.power p span:last-child{
     color: var(--green);
     animation-delay: 1s;
 }
@@ -55,13 +55,13 @@ p span:last-child{
   }
 
 @media screen and (max-width: 800px) {
-    :host{
+    .power{
         margin-bottom: 50px;
       }
-      img{
+    .power img{
         height: 80vw;
       }
-      p{
+    .power p{
         font-size:10vw;
         line-height: 20vw;
     }

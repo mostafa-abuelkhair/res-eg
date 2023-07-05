@@ -9,6 +9,7 @@ import { PowerComponent } from './power/power.component';
 import { ServiceComponent } from './service/service.component';
 import { MessageComponent } from './message/message.component';
 import { FeaturedComponent } from './featured/featured.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FeaturedComponent } from './featured/featured.component';
     PowerComponent,
     ServiceComponent,
     MessageComponent,
-    FeaturedComponent
+    FeaturedComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 :host{
     overflow: hidden;
 }
-section{
+.message{
     position: relative;
     margin-top: 100px;
     height: 30rem;
@@ -14,7 +14,7 @@ section{
     text-align: center;
 }
 
-section::before{
+.message::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -27,12 +27,12 @@ section::before{
     z-index: -1;
 }
 
-h1{
+.message h1{
     font-size: 4rem;
     color: white;
     margin-bottom: 0px;
 }
-p{
+.message p{
     margin-top: 0px;
     padding-left: 8%;
     padding-right: 8%;
@@ -43,16 +43,16 @@ p{
 }
 
 @media screen and (max-width: 1000px) {
-    section{
+    .message{
         margin-top: 50px;
         height: 40rem;
     }
     
-    h1{
+    .message h1{
         font-size: 3.5rem;
 
     }
-    p{
+    .message p{
         font-size: 1.5rem;
         line-height: 4rem;
     }
