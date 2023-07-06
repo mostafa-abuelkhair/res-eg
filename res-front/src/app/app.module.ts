@@ -10,6 +10,7 @@ import { ServiceComponent } from './service/service.component';
 import { MessageComponent } from './message/message.component';
 import { FeaturedComponent } from './featured/featured.component';
 import { FooterComponent } from './footer/footer.component';
+import { PrefooterComponent } from './prefooter/prefooter.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     ServiceComponent,
     MessageComponent,
     FeaturedComponent,
-    FooterComponent
+    FooterComponent,
+    PrefooterComponent
   ],
   imports: [
     BrowserModule,
