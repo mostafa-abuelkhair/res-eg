@@ -1,10 +1,11 @@
 footer{
     
-    background-color: var(--blue);
+    background-color: var(--green);
     color: white;
     display: grid;
     grid-template: 'res contact subscribe' 'copyright copyright copyright';
     column-gap: 20px;
+    row-gap: 30px;
     font-size: 18px;
     font-family: sans-serif;
     letter-spacing: 2px;
@@ -31,14 +32,14 @@ footer .contact{
     
 }
 footer .contact span{
-    margin-top: 40PX;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
 }
 footer .contact span i{display: flex;width: 10%;align-items: center;color: var(--yellow);}
 footer .contact span strong{width: 90%;}
 footer .contact span:last-child {justify-content: flex-start;font-size: 30px}
-footer .contact span:last-child i{margin-right: 15px;color: var(--green);}
+footer .contact span:last-child i{margin-right: 15px;}
 footer .contact span:last-child i:hover{color: var(--yellow); cursor: pointer;}
 
 
@@ -73,7 +74,7 @@ footer .subscribe button{
     display: block;
     width: 150px;
     padding: 10px;
-    background-color: var(--green);
+    background-color: var(--yellow);
     font-size: 15px;
 }
 
@@ -94,10 +95,7 @@ footer .Copyright{
 /* Medium devices (landscape tablets, 992px and down) */
 @media only screen and (max-width: 992px) {
     footer{
-
         grid-template: 'res contact' 'subscribe subscribe' 'copyright copyright';
-        column-gap: 20px;
-        row-gap: 50px;
     }
 
 }
@@ -106,10 +104,7 @@ footer .Copyright{
 @media only screen and (max-width: 768px) {
 
     footer{
-
         grid-template: 'res' 'contact' 'subscribe' 'copyright';
-        column-gap: 20px;
-        row-gap: 50px;
     }
 
     footer .contact span{margin-top: 20px;}

@@ -2,6 +2,7 @@
     margin-top: 100px;
     text-align: center;
     font-family: sans-serif;
+    
 }
 .featured-products>h1{
     font-size: 3rem;
@@ -23,10 +24,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .product img, .product div{
-    height: 100%;
     width: 50%;
 }
 
@@ -36,6 +37,7 @@
 
 
 .product div{
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
