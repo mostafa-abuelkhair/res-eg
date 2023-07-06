@@ -50,11 +50,11 @@
     to {opacity: 100%;}
   }
 
-  @media screen and (max-width: 1000px) {
+@media screen and (max-width: 992px) {
 
   }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
     .power{
         margin-bottom: 50px;
       }

@@ -1,12 +1,13 @@
 footer{
-    height: 300px;
+    
     background-color: var(--blue);
     color: white;
     display: grid;
-    grid-template: 'contact res subscribe' 'copyright copyright copyright';
+    grid-template: 'res contact subscribe' 'copyright copyright copyright';
     column-gap: 20px;
-    font-size: 20px;
-    
+    font-size: 18px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
 }
 
 
@@ -14,37 +15,106 @@ footer>div{
     min-width: 0;
     padding-left: 50px;
     box-sizing: border-box;
+
 }
 
 footer>div>*{
     display: inline-block;
-    box-sizing: border-box;;
+    box-sizing: border-box;
     width: 100%;
+
 }
 
-footer div:first-child{
+
+footer .contact{
     grid-area: contact;
     
 }
-footer div:first-child span{}
+footer .contact span{
+    margin-top: 40PX;
+    display: flex;
+    justify-content: center;
+}
+footer .contact span i{display: flex;width: 10%;align-items: center;color: var(--yellow);}
+footer .contact span strong{width: 90%;}
+footer .contact span:last-child {justify-content: flex-start;font-size: 30px}
+footer .contact span:last-child i{margin-right: 15px;color: var(--green);}
+footer .contact span:last-child i:hover{color: var(--yellow); cursor: pointer;}
 
-footer div:nth-child(2){
+
+
+footer .res{
     grid-area: res;
-   
+    padding-top: 40px;
 }
-footer div:nth-child(2) img{
-    width: 250px;
-}
+footer .res img{width: 200px;}
+footer .res span{font-size: 20px;}
 
-footer div:nth-child(3){
+
+
+footer .subscribe{
     grid-area: subscribe;
 }
-
-footer div:last-child{
-    margin-top: 80px;
-    grid-area: copyright;
-    width: 100%;
-    height: 20px;
-    text-align: center;
+footer .subscribe>*{
+    margin-top: 20px;
+}
+footer .subscribe h2{
+    border-bottom: solid white;
+    width: fit-content;
+    border-color: var(--yellow);
+}
+footer .subscribe input{
+    border: none;
+    padding: 10px;
+    width: 80%;
+}
+footer .subscribe button{
+    border:none;
+    display: block;
+    width: 150px;
+    padding: 10px;
+    background-color: var(--green);
+    font-size: 15px;
 }
 
+
+footer .Copyright{
+    grid-area: copyright;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) {}
+
+/* Medium devices (landscape tablets, 992px and down) */
+@media only screen and (max-width: 992px) {
+    footer{
+
+        grid-template: 'res contact' 'subscribe subscribe' 'copyright copyright';
+        column-gap: 20px;
+        row-gap: 50px;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+
+    footer{
+
+        grid-template: 'res' 'contact' 'subscribe' 'copyright';
+        column-gap: 20px;
+        row-gap: 50px;
+    }
+
+    footer .contact span{margin-top: 20px;}
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
