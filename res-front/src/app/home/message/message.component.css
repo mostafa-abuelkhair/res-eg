@@ -21,7 +21,7 @@
     height: 100%;
     top: 0px;
     left: 0px;
-    background-image: url("../../assets/message.jpg");
+    background-image: url("/assets/message.jpg");
     background-position: center;
     filter: brightness(20%);
     z-index: -1;
