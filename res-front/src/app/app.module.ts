@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PrefooterComponent } from './home/prefooter/prefooter.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SolutionsComponent } from './solutions/solutions.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FooterComponent,
     PrefooterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SolutionsComponent
   ],
   imports: [
     BrowserModule,
