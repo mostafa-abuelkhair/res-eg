@@ -1,1 +1,33 @@
-<p>solutions works!</p>
+<h1>
+    Explore Our Solutions
+</h1>
+
+<section>
+
+
+    <aside>
+
+        <div *ngFor = "let filter of filters; index as i">
+            <h3 (click)=" filter.class= filter.class===''? 'list-hide':'' ">
+                {{filter.name}} <i class="fa-solid fa-bars"></i>
+            </h3>
+            <ul [class]="filter.class">
+                <li *ngFor = "let value of filter.values"> <span>{{value}}</span> <i class="fa-solid fa-check"></i> </li>
+            </ul>
+        </div>
+    
+    </aside>
+    
+    
+    <section class="products">
+        
+        <div class="product" *ngFor = "let product of products; index as i">
+            <img [src]="product.src" alt="">
+            <a href="">{{product.p}}</a>
+        </div>
+
+    </section>    
+
+    
+</section>
+
