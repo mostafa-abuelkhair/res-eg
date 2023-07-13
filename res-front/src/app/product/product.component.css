@@ -1,0 +1,90 @@
+.product{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 55%;
+    grid-template-areas: 'img article' 'table table';
+    row-gap: 50px;
+    font-size: 1.3rem;
+    margin-top: 100px;
+    font-family: arial, sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+
+.product img{
+    grid-area: img;
+    object-fit: cover;
+    width: 80%;
+}
+
+
+
+
+.product article{
+    grid-area: article;
+    padding: 10px;
+}
+
+.product article p{
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 3rem;
+}
+.product article button{
+display: block;
+cursor: pointer;
+margin-top: 30px;
+font-size: 1.3rem;
+width: 150px;
+height: 40px;
+border: none;
+background-color: var(--red);
+color: white;
+}
+
+
+
+
+
+.product table{
+    grid-area: table;
+    margin: auto;
+    width: 100%;
+}
+.product table, th, td {
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.product th{
+    text-transform: uppercase;
+}
+.product td{
+    font-size: 1.2rem;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: var(--yellow);
+    
+}
+.product thead th{
+    padding: 10px;
+    font-size: 1.4rem;
+    color: var(--blue);
+}
+.product tbody th{
+    font-size: 1.3rem;
+    padding: 20px;
+    text-align: start;
+}
+
+
+@media screen and (max-width: 768px) {
+    .product{
+        grid-template-columns: 100%;
+        grid-template-areas: 'img' 'article' 'table';
+
+    }
+  }

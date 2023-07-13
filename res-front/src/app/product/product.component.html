@@ -1,1 +1,32 @@
-<p>product works!</p>
+<section class="product">
+    
+    <img [src]="product.src" alt="">
+
+    <article>
+        <p>{{product.des}}</p>
+        <span>{{product.serial}}</span>
+        <button>Order Now</button>
+    </article>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th colspan="2">Specifications</th>
+            </tr>
+        </thead>
+
+        <tbody *ngFor = "let specs of product.specifications">
+            <tr>
+                <th colspan="2">{{specs.title}}</th>
+            </tr>
+            <tr *ngFor = "let spec of specs.specs; index as i">
+                <td>{{spec[0]}}</td>
+                <td>{{spec[1]}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+</section>
