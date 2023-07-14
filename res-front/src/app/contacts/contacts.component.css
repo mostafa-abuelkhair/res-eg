@@ -1,0 +1,109 @@
+:host{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    margin: 50px 0px;
+    font-family: Arial, sans-serif;
+}
+
+.contact-form,.contact-info{
+    padding: 3%;
+    border: solid;
+    box-sizing: border-box;
+}
+
+.contact-form{
+    width: 40%;
+    border-color: var(--red);
+}
+.contact-form>div{
+    padding: 20px;
+}
+
+.contact-form label{
+    display: inline-block;
+    width: 100%;
+}
+.contact-form input{
+    width: 70%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: solid;
+    outline: none;
+    border-color: black;
+    color: var(--red);
+}
+.contact-form textarea{
+    width: 90%;
+    font-size: 1.2rem;
+}
+.contact-form button{
+    border: none;
+    background-color: var(--red);
+    color: white;
+    width: 55%;
+    letter-spacing: 0.3rem;
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+.contact-info{
+    border-color: var(--yellow);
+    width: 30%;
+    background-color: var(--yellow);
+    color:black;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: black;
+}
+.contact-info ul{
+    padding: 10px;
+}
+
+.contact-info li{
+    margin-top: 20px;
+    list-style: none;
+}
+.contact-info li i{
+    margin-right: 20px;
+    font-size: 1.8rem;
+}
+
+.contact-info a{
+    text-decoration: none;
+    color: black;
+}
+
+.contact-info a:hover{
+    text-decoration: underline;
+}
+
+.contact-info h2, .contact-info i{
+    color: var(--red);
+}
+
+.contact-info span, .contact-info a{
+    color: black;
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+    .contact-form,.contact-info{
+        width: 90%;
+    }
+  }

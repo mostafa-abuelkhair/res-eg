@@ -23,7 +23,7 @@
         
         <div class="product" *ngFor = "let product of products; index as i">
             <img [src]="product.src" alt="">
-            <a href="">{{product.p}}</a>
+            <a routerLink="/product" >{{product.p}}</a>
         </div>
 
     </section>    
