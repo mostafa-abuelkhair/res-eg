@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class UrlParamsPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): unknown {
+  transform(value: string, ...args: unknown[]): {} {
 
     const searchParams:any = new URLSearchParams(value.substring(value.indexOf('?')));
 

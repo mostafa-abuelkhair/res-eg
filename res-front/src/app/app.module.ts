@@ -7,23 +7,22 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import {SharedModule} from "./shared/shared.module";
+
 import {HttpClientModule} from '@angular/common/http';
-import { UrlRoutePipe } from './pipes/url-route.pipe';
-import { UrlParamsPipe } from './pipes/url-params.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FooterComponent,
-    PageNotFoundComponent,
-    UrlRoutePipe,
-    UrlParamsPipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductsApiService } from 'src/app/services/products-api.service';
+import { ProductsApiService } from 'src/app/shared/services/products-api.service';
 
 type product = {id:number,reference:string,image:string,description:string};
 
