@@ -9,6 +9,8 @@ import { ServiceComponent } from './service/service.component';
 import { MessageComponent } from './message/message.component';
 import { FeaturedComponent } from './featured/featured.component';
 import { PrefooterComponent } from './prefooter/prefooter.component';
+import { UrlParamsPipe } from '../pipes/url-params.pipe';
+import { UrlRoutePipe } from '../pipes/url-route.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PrefooterComponent } from './prefooter/prefooter.component';
     ServiceComponent,
     MessageComponent,
     FeaturedComponent,
-    PrefooterComponent
+    PrefooterComponent,
+    UrlRoutePipe,
+    UrlParamsPipe,
   ],
   imports: [
     CommonModule,

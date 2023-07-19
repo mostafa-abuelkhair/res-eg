@@ -7,8 +7,11 @@ import * as AOS from 'aos';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   ngOnInit() {
     AOS.init({ duration : 1000});
   }
+  
   title = 'res-front';
+
 }

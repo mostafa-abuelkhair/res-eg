@@ -14,8 +14,10 @@
 <section class="carousel" data-aos="zoom-out-up" data-aos-delay="600" data-aos-id="carousel">
 
     <div *ngFor = "let card of cards; index as i" class="card" [style] = "cardStyle(i)" (click)="cardChoose(i)">
-        <img [src]="card.src" alt="">
-        <a href="">{{ card.p }}</a>
+        <img [src]="'assets/products_images/' + card.image" alt="">
+        <a  [routerLink]="'/' + card.reference | urlRoute" [queryParams]="card.reference | urlParams">
+             {{ card.description }} 
+        </a>
     </div>
 
 </section>

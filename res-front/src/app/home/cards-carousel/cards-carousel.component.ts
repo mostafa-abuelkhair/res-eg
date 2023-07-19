@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ProductsApiService } from 'src/app/services/products-api.service';
+
+
+type card = {id:number,reference:string,image:string,description:string};
 
 
 @Component({
@@ -7,21 +11,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cards-carousel.component.css']
 })
 export class CardsCarouselComponent{
-
-  lor="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus itaque fugiat consequatur omnis laudantium tempora eveniet illum iste sit. Iste dolores nisi asperiores consectetur consequuntur fugit perferendis iure sint ab."
   
-  cards = [ 
-            {src:"../../assets/p10.JPG", p:"Easy UPS 1 Ph On-Line, 3kVA, Rackmount 4U, Extended Runtime, W/ rail kit" },
-            {src:"../../assets/p9.JPG", p:"Network Management Card for Easy UPS, 1-Phase"},
-            {src:"../../assets/p8.JPG", p:"Easy UPS 1 Ph On-Line, 3kVA, Rackmount 2U, W/ rail kit" },
-            {src:"../../assets/p7.JPG", p:"Easy UPS 1 Ph On-Line, 6kVA/6kW, Intelligent Card Slot, LCD" },
-            {src:"../../assets/p6.JPG", p:"APC Easy UPS, 900VA, Tower, AVR" },
-            {src:"../../assets/p5.JPG", p:"Network Power supply with battery backup, 12Vdc, lithium battery" },
-            {src:"../../assets/p4.JPG", p:"APC Easy UPS 1 Ph Line Interactive, 1500VA, AVR, LCD"},
-            {src:"../../assets/p3.JPG", p:"APC Easy UPS, 1000VA, Floor/Wall Mount " },
-            {src:"../../assets/p2.JPG", p:"Easy UPS 1 Ph On-Line, 2000VA, Tower with LCD" },
-            {src:"../../assets/p1.JPG", p:"Easy UPS 1 Ph On-Line, 1000VA, Extended runtime" }
-          ];
+  constructor(private api:ProductsApiService){}
+
+  cards:card[]=[];
 
   cardChosen = this.cards.length;
 
@@ -32,6 +25,11 @@ export class CardsCarouselComponent{
   ngOnInit() {
 
       document.addEventListener('aos:in:carousel', this.startCards.bind(this));
+
+      this.api.getCarousel().subscribe( (response:any) => { 
+        this.cards = response;
+        this.cardChosen = this.cards.length;
+      });
 
       this.startCards()
     

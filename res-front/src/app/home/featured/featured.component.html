@@ -6,10 +6,12 @@
     <section>
 
         <div class="product" *ngFor = "let product of products; index as i">
-            <img [src]="product.src" alt="">
+            <img [src]="'assets/products_images/' + product.image" alt="">
             <div>
-                <span href="">{{product.p}}</span>
-                <button>Explore</button>
+                <span>{{product.description}}</span>
+                <button [routerLink]="'/' + product.reference | urlRoute" [queryParams]="product.reference | urlParams">
+                    Explore
+                </button>
             </div>
         </div>
 
