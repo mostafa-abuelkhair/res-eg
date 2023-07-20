@@ -29,6 +29,8 @@ export class SolutionsComponent {
     this.api.getAll(0).subscribe( (response:any) => { 
       this.products = response;
     });
+
+    
 }
 
 }
