@@ -3,14 +3,7 @@
 include 'cors.php';
 include 'db.php';
 
-$pagination_skip = (int) $_GET['skip'];
-
-
-
-$sql = "SELECT * FROM `products` 
-        INNER JOIN categories ON products.category_id =categories.category_id
-        LIMIT $pagination_skip , 9
-        ";
+$sql = "SELECT * FROM `featured`";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

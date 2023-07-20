@@ -1,12 +1,14 @@
 <?php
 
+include 'cors.php';
 include 'db.php';
 
 $id = $_GET['id'];
 
-$sql = "SELECT * FROM `products`
-    WHERE id='$id'
-";
+$sql = "SELECT * FROM products
+        INNER JOIN categories ON products.category_id =categories.category_id
+        WHERE id='$id'
+      ";
 
 $result = $conn->query($sql);
 
@@ -18,7 +20,7 @@ if ($result->num_rows > 0) {
         "SELECT title,name,value FROM products_specifications
         INNER JOIN specifications_titles ON products_specifications.title_id =specifications_titles.id
         INNER JOIN specifications_names ON products_specifications.name_id =specifications_names.id
-        WHERE product_id='1';
+        WHERE product_id='$id';
         ";
 
     $result2 = $conn->query($sql);

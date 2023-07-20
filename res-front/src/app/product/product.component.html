@@ -1,11 +1,11 @@
 <section class="product">
     
-    <img [src]="product.src" alt="">
+    <img [src]="'assets/products_images/' + product.image" alt="">
 
     <article>
-        <p>{{product.des}}</p>
-        <span>{{product.serial}}</span>
-        <button>Order Now</button>
+        <p>{{product.description}}</p>
+        <span>{{product.part_number}}</span>
+        <button routerLink="/contacts" >Order Now</button>
     </article>
 
     <table>
@@ -21,8 +21,8 @@
                 <th colspan="2">{{specs.title}}</th>
             </tr>
             <tr *ngFor = "let spec of specs.specs; index as i">
-                <td>{{spec[0]}}</td>
-                <td>{{spec[1]}}</td>
+                <td>{{spec.name}}</td>
+                <td>{{spec.value}}</td>
             </tr>
         </tbody>
 

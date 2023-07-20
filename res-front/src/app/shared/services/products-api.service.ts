@@ -10,8 +10,8 @@ export class ProductsApiService {
 
   url="http://localhost:8012/res"
 
-  getAll(){
-    return this.http.get(this.url+'/getproducts.php')
+  getAll(skip:number){
+    return this.http.get(this.url+'/getproducts.php?skip=' + skip)
   }
 
   getProduct(id:number){

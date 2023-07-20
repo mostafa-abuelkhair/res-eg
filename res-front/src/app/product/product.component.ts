@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductsApiService } from '../shared/services/products-api.service';
+
 
 @Component({
   selector: 'app-product',
@@ -7,55 +9,51 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  constructor(
-    private route: ActivatedRoute
-  ) {}
 
-  product:any;
+
+  product:any = {id:0, part_number:'', image:'',description:'',short_description:'',price:0 ,specifications:[]};
+  product_specifications:{}[]=[];
+  id;
+
+  constructor(
+    private route: ActivatedRoute,
+    private api:ProductsApiService
+  ) {this.id = this.route.snapshot.queryParamMap.get('id');}
+
+
 
   ngOnInit() {
 
-
-    this.product = this.route.snapshot.queryParamMap.get('id');
- 
-    this.product ={
-      src:"assets/p10.JPG",
-      des:"APC Easy UPS 1 Ph Line Interactive, 1000VA, Tower, 230V, 4 Schuko CEE 7 outlets, AVR, LCD",
-      serial:"SMV1000I-GR",
-      specifications:[
-      {'title':'Main',specs:[ 
-        ['Max Load Runtime','3min 23s'],
-        ['Main Input Voltage','230 V'],
-        ['Input voltage','220V 240V'],
-        ['Main Output Voltage','230 V'],
-        ['rated power in W', '700 W'],
-        ['Rated power in VA','1000 VA'],
-        ['Input Connection Type','IEC 60320 C14'],
-        ['Battery type','Lead-acid battery'] 
-      ]},
-      {'title':'Battery',specs:[
-        ['Number of battery filled slots','0'],
-        ['Number of battery free slots','0'],
-        ['Battery recharge time','4 h'],
-        ['Battery voltage','24 V'],
-        ['Battery charger power','37 W rated'],
-        ['Battery life','3…5 year(s)'],
-        ['Replacement battery','APCRBCV206']
-      ]},
-        {'title':'General', specs:[
-        ['Number of power module free slots','0'],
-        ['Number of power module filled slots','0'],
-        ['Redundant', 'No'],
-        ['UPS size','WS']
-      ]}
-
-      ]
-      
-    }
-
+      this.api.getProduct(Number(this.id)).subscribe(this.prepareProduct.bind(this));
 
   }
 
+  
+  prepareProduct(response:any){
+
+    const titles = new Set();
+    const specifications:any = [];
+
+    response.specs.forEach( (e:any) => { titles.add(e.title) } );
+    
+    
+    titles.forEach( (e:any) => {
+    
+    const specs:any=[];
+    
+    response.specs.forEach( (s:any) => { if (s.title===e){
+    let {title, ...res} = s; 
+    specs.push(res);
+    }});
+    
+    specifications.push({title:e , specs: specs})
+    
+    } );
+
+    response.specifications = specifications;
+    this.product = response;
+
+  }
 
 
 }
