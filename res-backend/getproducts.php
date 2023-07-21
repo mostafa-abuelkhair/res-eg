@@ -8,12 +8,12 @@ $pagination_skip = (int) $_GET['skip'] ;
 $filters = [];
 $values = [];
 
-if(isset($_GET['filters']))
+if(isset($_GET['filters']) && $_GET['filters']!=='')
 {
   $filters= explode(',',$_GET['filters']);
 }
 
-if(isset($_GET['values']))
+if(isset($_GET['values']) && $_GET['values']!=='')
 {
   $values= explode(',',$_GET['values']);
 }

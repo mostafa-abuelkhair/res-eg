@@ -16,22 +16,39 @@ export class SolutionsComponent {
   }
 
   filters_data  = [
-    {name:'Type', values:['line interactive','AVR','Online']},
-    {name:'Rated Power in VA', values:['600','1000','2000','5000','6000','8000','10000','20000']}
+    {name:'UPS type', values:[['line interactive'],['AVR'],['Double conversion online']]},
+    {name:'Rated power in VA', values:[['600 VA'],['1000 VA'],['2000 VA'],['5000 VA'],['6000 VA'],['8000 VA'],['10000 VA'],['20000 VA']]}
   ]
 
-  filters=this.filters_data.map((filter)=>{ return {...filter,class:'list-hide'} });
+  filters:any=this.filters_data.map((filter)=>{ return {...filter,class:'list-hide', valueChoosed:null} });
 
   products:product[] = [];
 
+  skip = 0;
+
   ngOnInit() {
 
-    this.api.getAll(0).subscribe( (response:any) => { 
+    this.getProducts();
+
+  }
+
+  addFilter(filterIndex:number, valueIndex:number){
+    this.filters[filterIndex].valueChoosed=valueIndex;
+    this.skip=0;
+    this.getProducts();
+  }
+
+  getProducts(){
+
+    this.api.getAll(this.skip , this.getFiltersChoosed()).subscribe( (response:any) => { 
       this.products = response;
     });
 
-    
-}
+  }
+
+  getFiltersChoosed(){
+    return this.filters.filter((f:any)=>f.valueChoosed!==null)
+  }
 
 }
 

@@ -89,14 +89,14 @@ aside ul li i{
 
 
 
-.pagination{
+.products .pagination{
     margin-top: 50px;
     margin-bottom: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.pagination button{
+.products .pagination button{
     margin-left: 30px;
     margin-right: 30px;
     width: 80px;
@@ -107,6 +107,16 @@ aside ul li i{
     border: none;
     cursor: pointer;
 }
+
+
+.products .filters{
+    width: 100%;
+}
+.products .filters span{
+    margin: 10px;
+    cursor: pointer;
+}
+.products .filters span:hover{color: var(--red);}
 
 
 @media screen and (max-width: 992px) {

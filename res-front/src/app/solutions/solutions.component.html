@@ -12,7 +12,9 @@
                 {{filter.name}} <i class="fa-solid fa-bars"></i>
             </h3>
             <ul [class]="filter.class">
-                <li *ngFor = "let value of filter.values"> <span>{{value}}</span> <i class="fa-solid fa-check"></i> </li>
+                <li *ngFor = "let value of filter.values; index as y" (click)="addFilter(i,y)">
+                     <span>{{value[0]}}</span> <i class="fa-solid fa-check"></i> 
+                </li>
             </ul>
         </div>
     
@@ -20,6 +22,12 @@
     
     
     <section class="products">
+
+        <div class="filters">
+            <span *ngFor = "let filter of getFiltersChoosed();" (click)="filter.valueChoosed=null;getProducts();">
+                {{filter.name + ' : ' + filter.values[filter.valueChoosed][0]}}  <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+        </div>
         
         <div class="product" *ngFor = "let product of products; index as i">
             <img [src]="'assets/products_images/' + product.image" alt="">
