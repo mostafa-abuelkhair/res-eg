@@ -21,7 +21,7 @@
     </aside>
     
     
-    <section class="products">
+    <section #productsEl  id="products" class="products">
 
         <div class="filters">
             <span *ngFor = "let filter of getFiltersChoosed();" (click)="filter.valueChoosed=null;getProducts();">
@@ -29,14 +29,19 @@
             </span>
         </div>
         
+        <div class="no" *ngIf="products.length===0">
+            No Products Found
+        </div>
+
+
         <div class="product" *ngFor = "let product of products; index as i">
             <img [src]="'assets/products_images/' + product.image" alt="">
             <a routerLink="/product" [queryParams]="{id:product.id}" >{{product.short_description}}</a>
         </div>
 
         <div class="pagination">
-            <button><i class="fa-solid fa-chevron-left"></i></button>
-            <button><i class="fa-solid fa-chevron-right"></i></button>
+            <button *ngIf="skip>0" (click)="decreaseSkip()"><i class="fa-solid fa-chevron-left"></i></button>
+            <button *ngIf="skip+9 < count" (click)="increaseSkip()"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 
     </section>

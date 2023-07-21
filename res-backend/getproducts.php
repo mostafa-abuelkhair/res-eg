@@ -18,15 +18,14 @@ if(isset($_GET['values']) && $_GET['values']!=='')
   $values= explode(',',$_GET['values']);
 }
 
-
-$sql = "SELECT products.* FROM products
-        WHERE 1
-       ";
+$filter_sql="
+            WHERE 1
+            ";
 for ($i= 0; $i < count($filters); $i++) {
   $filter = $filters[$i];
   $value = $values[$i];
   
-  $sql.= "AND
+  $filter_sql.= "AND
           id = ANY 
           (SELECT product_id FROM products_specifications
             INNER JOIN specifications_names ON products_specifications.name_id =specifications_names.id
@@ -34,21 +33,20 @@ for ($i= 0; $i < count($filters); $i++) {
           )
           ";
 }
-       
-$sql.="LIMIT $pagination_skip , 9;";
 
-$result = $conn->query($sql);
+$result = $conn->query( "SELECT * FROM products" . $filter_sql . "LIMIT $pagination_skip , 9;" );
+
+$products = array();
 
 if ($result->num_rows > 0) {
-  // output data of each row
-  $rows = array();
-
   while($row = $result->fetch_assoc()) {
-    $rows[] = $row;
+    $products[] = $row;
   }
-  echo json_encode($rows);
-} else {
-  echo "";
 }
+
+$count=  $conn->query( "SELECT COUNT(*) AS 'count' FROM products" . $filter_sql )->fetch_assoc()['count'];
+
+echo json_encode( array( "count"=>$count, "products"=> $products) );
+
 
 ?>

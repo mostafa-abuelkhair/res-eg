@@ -19,8 +19,7 @@ export class ProductsApiService {
         filterNames.push( filter.values[filter.valueChoosed][1] || filter.name );
     });
 
-    console.log(`/getproducts.php?skip=${skip}&filters=${filterNames.join(',')}&values=${filterValues.join(',')}`);
-    return this.http.get(this.url+`/getproducts.php?skip=${skip}&filters=${filterNames.join(',')}&values=${filterValues.join(',')}`)
+    return this.http.get(this.url+`/getproducts.php?skip=${skip}&filters=${filterNames.join(',')}&values=${filterValues.join(',')}`);
     
   }
 

@@ -60,7 +60,10 @@ aside ul li i{
     box-sizing: border-box;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+    scroll-margin-top: 100px;
+    min-height: 800px
 }
 
 .product{
@@ -107,6 +110,7 @@ aside ul li i{
     border: none;
     cursor: pointer;
 }
+.products .pagination button:hover{background-color: var(--red);}
 
 
 .products .filters{
