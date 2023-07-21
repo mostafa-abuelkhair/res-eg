@@ -28,6 +28,8 @@ export class SolutionsComponent {
 
   count = 0;
 
+  preload=true;
+
   ngOnInit() {
 
     this.getProducts();
@@ -42,11 +44,15 @@ export class SolutionsComponent {
   }
 
   getProducts(){
+
+    this.preload=true;
+    this.products=[];
     
     this.api.getAll(this.skip , this.getFiltersChoosed()).subscribe( (response:any) => { 
       this.products = response.products;
       this.count = Number(response.count);
 
+      this.preload=false;
     });
 
   }

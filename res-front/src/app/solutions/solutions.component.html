@@ -29,10 +29,11 @@
             </span>
         </div>
         
-        <div class="no" *ngIf="products.length===0">
+        <div *ngIf="products.length===0 && !preload">
             No Products Found
         </div>
 
+        <app-preloading *ngIf="preload"></app-preloading>
 
         <div class="product" *ngFor = "let product of products; index as i">
             <img [src]="'assets/products_images/' + product.image" alt="">
