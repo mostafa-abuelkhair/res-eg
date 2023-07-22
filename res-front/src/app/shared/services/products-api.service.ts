@@ -8,7 +8,7 @@ export class ProductsApiService {
 
   constructor( private http:HttpClient ) { }
 
-  url="http://localhost:8012/res"
+  url=""
 
   getAll(skip:number = 0,filters:any= []){
 
