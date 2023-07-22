@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProductsApiService } from '../shared/services/products-api.service';
+import { ActivatedRoute } from '@angular/router';
 
 type product = {id:number,part_number:string,image:string,description:string,short_description:string,category_id:number,price:number};
 
@@ -11,9 +12,7 @@ type product = {id:number,part_number:string,image:string,description:string,sho
 })
 export class SolutionsComponent {
 
-  constructor(private api:ProductsApiService){}
-
-  @ViewChild('productsEl') productsEl:any; 
+  @ViewChild('productsEl') productsEl:ElementRef | undefined; 
 
   filters_data  = [
     {name:'UPS type', values:[['line interactive'],['AVR'],['Double conversion online']]},
@@ -30,8 +29,12 @@ export class SolutionsComponent {
 
   preload=true;
 
+
+  constructor(private route: ActivatedRoute, private api:ProductsApiService){}
+
   ngOnInit() {
 
+    this.addFiltersFromRoute();
     this.getProducts();
 
   }
@@ -42,6 +45,18 @@ export class SolutionsComponent {
     this.getProducts();
     this.scrollToProducts();
   }
+
+  addFiltersFromRoute(){
+    const filter = this.route.snapshot.queryParamMap.get('f');
+    if(filter !== null && filter!="" ){
+      try{
+        const filterA = filter.split(',');
+        this.filters[filterA[0]].valueChoosed=filterA[1];
+      }
+      catch{}
+    }
+  }
+
 
   getProducts(){
 
@@ -73,7 +88,7 @@ export class SolutionsComponent {
   }
 
   scrollToProducts(){
-    this.productsEl.nativeElement.scrollIntoView();
+    if(this.productsEl!==undefined) this.productsEl.nativeElement.scrollIntoView();
   }
 }
 

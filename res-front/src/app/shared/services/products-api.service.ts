@@ -35,6 +35,13 @@ export class ProductsApiService {
     return this.http.get(this.url+'/getfeatured.php')
   }
 
+  PostSubscriber(email:string){
+    return this.http.post(this.url+'/subscribe.php',{subscriber:email})
+  }
+
+  sendMessage(body:any){
+    return this.http.post(this.url+'/message.php',body)
+  }
 
   /*this.api.getAll().subscribe( (response:any) => { 
     console.log(response);

@@ -19,8 +19,8 @@
    <div class="subscribe">
         <h2>Subscribe Now</h2>
         <span>Sign up to receive our latest news & offers.</span>
-        <input type="email" placeholder="Enter your email address">
-        <button>Subscribe Now</button>
+        <input [(ngModel)]="subscriber"  type="email" placeholder="Enter your email address">
+        <button (click)="addSubscriber()">Subscribe Now</button>
    </div> 
 
    <div class="Copyright">Copyright © res-eg.com All Rights Reserved.</div>
