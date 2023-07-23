@@ -36,6 +36,7 @@ footer .contact span{
     display: flex;
     justify-content: center;
 }
+footer .contact span a{text-decoration: none;}
 footer .contact span i{display: flex;width: 10%;align-items: center;color: var(--yellow);}
 footer .contact span strong{width: 90%;}
 footer .contact span:last-child {justify-content: flex-start;font-size: 30px}
