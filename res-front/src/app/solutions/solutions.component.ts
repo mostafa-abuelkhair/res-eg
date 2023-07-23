@@ -15,8 +15,10 @@ export class SolutionsComponent {
   @ViewChild('productsEl') productsEl:ElementRef | undefined; 
 
   filters_data  = [
-    {name:'UPS type', values:[['line interactive'],['AVR'],['Double conversion online']]},
-    {name:'Rated power in VA', values:[['600 VA'],['1000 VA'],['2000 VA'],['5000 VA'],['6000 VA'],['8000 VA'],['10000 VA'],['20000 VA']]}
+    {name:'UPS Type', values:[['line interactive',1],['AVR',2],['Double conversion online',0]]},
+    {name:'Rated Power In VA', values:[['500 - 800  VA',3],['1000 - 2000 VA',4],['2000 - 2200 VA',5],['3000 VA',6],['5000 VA',7],['6000 VA',8],['8000 VA',9],['10000 VA',10],['15000 VA',11],['20000 VA',12]]},
+    {name:'Mounting mode', values:[['Rack-mounted',13],['Not rack-mountable',14]]},
+    {name:'Series', values:[['APC Smart UPSs',15],['Easy UPSs 1 PH',16],['APC Back-UPS',17],['SE Easy UPS',18],['APC Line-R',19]]}
   ]
 
   filters:any=this.filters_data.map((filter)=>{ return {...filter,class:'list-hide', valueChoosed:null} });
@@ -90,6 +92,7 @@ export class SolutionsComponent {
   scrollToProducts(){
     if(this.productsEl!==undefined) this.productsEl.nativeElement.scrollIntoView();
   }
+
 }
 
 

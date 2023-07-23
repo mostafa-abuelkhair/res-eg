@@ -8,18 +8,16 @@ export class ProductsApiService {
 
   constructor( private http:HttpClient ) { }
 
-  url=""
+  url="http://localhost:8012/res"
 
   getAll(skip:number = 0,filters:any= []){
 
-    let filterValues:string[]=[];
-    let filterNames:string[] =[];
+    let filtersIndex:string[] =[];
     filters.forEach( (filter:any) => {
-        filterValues.push( filter.values[filter.valueChoosed][0] );
-        filterNames.push( filter.values[filter.valueChoosed][1] || filter.name );
+      filtersIndex.push( filter.values[filter.valueChoosed][1]);
     });
 
-    return this.http.get(this.url+`/getproducts.php?skip=${skip}&filters=${filterNames.join(',')}&values=${filterValues.join(',')}`);
+    return this.http.get(this.url+`/getproducts.php?skip=${skip}&filters=${filtersIndex.join(',')}`);
     
   }
 
