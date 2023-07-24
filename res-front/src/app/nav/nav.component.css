@@ -29,8 +29,8 @@
 }
 
 .upperNav div:first-child i{
-    margin-left: 2rem;
-    margin-right: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
 }
 .upperNav div:last-child i{
     margin-left: 1rem;
@@ -97,3 +97,12 @@
     
     }
 }
+
+@media screen and (max-width: 768px) {
+    .lowerNav{
+        height: 4rem;
+    }
+    .lowerNav img{
+        margin-left: 1.5rem;    
+    }
+    }

@@ -76,6 +76,10 @@ aside ul li i{
     width: 100%;
 }
 
+.product img{
+    cursor: pointer;
+}
+
 .product a{
     text-decoration-line: none;
     color: black;
